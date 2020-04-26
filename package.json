@@ -1,7 +1,30 @@
 {
   "name": "weather-frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "author": {
+    "name": "Peter Dyumin",
+    "url": "https://github.com/peterdee"
+  },
+  "description": "Frontend for the Moleculer projects",
+  "homepage": "https://github.com/peterdee/weather-frontend",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  },
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.14.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterdee/weather-frontend"
+  },
+  "keywords": [
+    "React",
+    "Typescript"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -14,12 +37,6 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
