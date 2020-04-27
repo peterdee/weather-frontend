@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import './style.css';
+import './style.scss';
 
 export default memo((): React.ReactElement => (
   <div className="index">

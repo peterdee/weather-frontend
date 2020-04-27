@@ -5,11 +5,11 @@ import About from './views/About/About';
 import Index from './views/Index/Index';
 import NotFound from './views/NotFound/NotFound';
 
-import './App.css';
+import './App.scss';
 
 export default (): React.ReactElement => {
   return (
-    <div className="app-wrap">
+    <div className="flex justify-content-start app-wrap">
       <Switch>
         <Route path="/" exact component={Index} />
         <Route path="/about" component={About} />

@@ -1,9 +1,24 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
-import './style.css';
+import Loader from '../../components/Loader';
+import './style.scss';
 
-export default memo((): React.ReactElement => (
-  <div className="not-found-wrap">
-    <h1>Page not found!</h1>
-  </div>
-));
+const NotFound: React.FunctionComponent = () => {
+  const history = useHistory();
+
+  useEffect(() => {
+    setTimeout((): void => history.push('/'), 3000);
+  });
+
+  return (
+    <div className="flex direction-column justify-content-center not-found-wrap">
+      <div>
+        Page not found! Redirecting...
+      </div>
+      <Loader />
+    </div>
+  );
+};
+
+export default memo(NotFound);
