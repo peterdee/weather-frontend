@@ -1,0 +1,25 @@
+.flex {
+  display: flex;
+}
+.align-content-center {
+  align-content: center;
+}
+.direction-column {
+  flex-direction: column;
+}
+.direction-row {
+  flex-direction: row;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-start {
+  justify-content: flex-start;
+}
+.text-center {
+  text-align: center;
+}
+
+.app-wrap {
+  min-height: 100vh;
+}
