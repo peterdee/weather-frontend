@@ -16,7 +16,7 @@ Use [`yarn`](https://yarnpkg.com) for module installation.
 git clone https://github.com/peterdee/weather-frontend
 cd ./weather-frontend
 nvm use 12.16.2
-npm i
+yarn install
 ```
 
 ### Environemnt

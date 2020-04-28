@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Loader from '../../components/Loader';
 import './style.scss';
 
-const NotFound: React.FunctionComponent = () => {
+const NotFound: React.FC = () => {
   const history = useHistory();
 
   useEffect(() => {
