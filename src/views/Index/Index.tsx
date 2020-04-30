@@ -14,8 +14,8 @@ const Index: React.FC = () => {
   );
 
   return (
-    <div className="index">
-      <h1>Index</h1>
+    <div className="flex direction-column content">
+      <h1>MetaWeather</h1>
     </div>
   );
 };
