@@ -22,14 +22,12 @@ time, mark, audio, video {
   -moz-osx-font-smoothing: grayscale;
   vertical-align: baseline;
 }
-html {
-  box-sizing: border-box;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 200;
+  color: midnightblue;
 }
