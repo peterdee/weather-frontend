@@ -1,9 +1,23 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 
 import './style.scss';
 
-export default memo((): React.ReactElement => (
-  <div className="index">
-    <h1>Index</h1>
-  </div>
-));
+const Index: React.FC = () => {
+  const [databaseOnline, setDatabaseOnline] = useState(false);
+  const [metaweatherOnline, setMetaweatherOnline] = useState(false);
+
+  useEffect(
+    () => {
+
+    },
+    [],
+  );
+
+  return (
+    <div className="index">
+      <h1>Index</h1>
+    </div>
+  );
+};
+
+export default memo(Index);
