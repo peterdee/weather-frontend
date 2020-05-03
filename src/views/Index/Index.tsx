@@ -9,6 +9,8 @@ const Index: React.FC = () => {
   const [metaweatherOnline, setMetaweatherOnline] = useState(false);
   const [metaweatherLoading, setMetaweatherLoading] = useState(false);
 
+  const [search, setSearch] = useState('');
+
   useEffect(
     () => {
       setDatabaseLoading(true);
@@ -31,7 +33,7 @@ const Index: React.FC = () => {
 
   return (
     <div className="flex direction-column content">
-      <h1>MetaWeather</h1>
+      <h1 className="noselect">MetaWeather</h1>
       <div className="margin-top">
         { `Database microservice: ${!databaseLoading && databaseOnline
           ? 'online'
@@ -43,6 +45,15 @@ const Index: React.FC = () => {
           ? 'online'
           : 'offline'}`
         }
+      </div>
+      <div className="margin-top">
+        <input
+          name="search"
+          onChange={(event) => setSearch(event.target.value)}
+          placeholder="Search location"
+          type="text"
+          value={search}
+        />
       </div>
     </div>
   );
