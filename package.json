@@ -26,17 +26,21 @@
     "Typescript"
   ],
   "dependencies": {
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-router-dom": "^5.1.5",
     "axios": "^0.19.2",
     "node-sass": "^4.14.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/prop-types": "^15.7.3"
   },
   "eslintConfig": {
     "extends": "react-app"
