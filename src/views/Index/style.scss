@@ -15,6 +15,13 @@ button:hover {
   cursor: pointer;
   transition: all 200ms ease-in;
 }
+button:disabled {
+  background-color: white;
+  border: 1px solid #cfcfcf;
+  color: #cfcfcf;
+  cursor: default;
+  transition: all 200ms ease-in;
+}
 input {
   border: 1px solid #bababa;
   border-radius: 15px;
