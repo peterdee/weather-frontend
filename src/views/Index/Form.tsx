@@ -1,14 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+import { FormProps } from './types';
 import './style.scss';
-
-type FormProps = {
-  handleForm: React.FormEventHandler,
-  handleInput: Function,
-  isEnabled: boolean,
-  search: string,
-};
 
 const Form: React.FunctionComponent<FormProps> = ({
   handleForm,

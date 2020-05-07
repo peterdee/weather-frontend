@@ -2,14 +2,8 @@ import React, { memo, useEffect, useState, FormEvent } from 'react';
 import axios from 'axios';
 
 import Form from './Form';
+import { LocationItem } from './types';
 import './style.scss';
-
-type LocationItem = {
-  latt_long: string,
-  location_type: string,
-  title: string,
-  woeid: number,
-};
 
 const Index: React.FC = () => {
   const [databaseOnline, setDatabaseOnline] = useState(false);
