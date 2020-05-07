@@ -2,20 +2,19 @@ import React, { memo, useEffect, useState, FormEvent } from 'react';
 import axios from 'axios';
 
 import Form from './Form';
+import Location from './Location';
+import { LocationItem } from './types';
 import './style.scss';
 
-type LocationItem = {
-  latt_long: string,
-  location_type: string,
-  title: string,
-  woeid: number,
-};
-
 const Index: React.FC = () => {
-  const [databaseOnline, setDatabaseOnline] = useState(false);
-  const [databaseLoading, setDatabaseLoading] = useState(false);
-  const [metaweatherOnline, setMetaweatherOnline] = useState(false);
-  const [metaweatherLoading, setMetaweatherLoading] = useState(false);
+  const [database, setDatabase] = useState({
+    isLoading: false,
+    isOnline: false,
+  });
+  const [metaweather, setMetaweather] = useState({
+    isLoading: false,
+    isOnline: false,
+  });
 
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -23,20 +22,36 @@ const Index: React.FC = () => {
 
   useEffect(
     () => {
-      setDatabaseLoading(true);
-      setMetaweatherLoading(true);
+      setDatabase({
+        isLoading: true,
+        isOnline: false,
+      });
+      setMetaweather({
+        isLoading: true,
+        isOnline: false,
+      });
       axios({
         method: 'GET',
         url: 'http://localhost:5522/api/ping',
-      }).then(() => setDatabaseOnline(true))
-      .catch(() => setDatabaseOnline(false))
-      .finally(() => setDatabaseLoading(false));
+      }).then(() => setDatabase({
+        isLoading: false,
+        isOnline: true,
+      }))
+      .catch(() => setDatabase((state) => ({
+        ...state,
+        isLoading: false,
+      })));
       axios({
         method: 'GET',
         url: 'http://localhost:5544/api/ping',
-      }).then(() => setMetaweatherOnline(true))
-      .catch(() => setMetaweatherOnline(false))
-      .finally(() => setMetaweatherLoading(false));
+      }).then(() => setMetaweather({
+        isLoading: false,
+        isOnline: true,
+      }))
+      .catch(() => setMetaweather((state) => ({
+        ...state,
+        isLoading: false,
+      })));
     },
     [],
   );
@@ -77,13 +92,13 @@ const Index: React.FC = () => {
     <div className="flex direction-column content">
       <h1 className="noselect">MetaWeather</h1>
       <div className="margin-top">
-        { `Database microservice: ${!databaseLoading && databaseOnline
+        { `Database microservice: ${!database.isLoading && database.isOnline
           ? 'online'
           : 'offline'}`
         }
       </div>
       <div className="margin-top">
-        { `MetaWeather API microservice: ${!metaweatherLoading && metaweatherOnline
+        { `MetaWeather API microservice: ${!metaweather.isLoading && metaweather.isOnline
           ? 'online'
           : 'offline'}`
         }
@@ -99,11 +114,13 @@ const Index: React.FC = () => {
       <div className="margin-top">
         { list.map((location: LocationItem) => (
           <div key={location.woeid}>
-            <button onClick={() => getDetails(location.woeid)}>
-              { location.title }
-            </button>
+            <Location
+              handleClick={getDetails}
+              id={location.woeid}
+              name={location.title}
+            />
           </div>
-        ))}
+        )) }
       </div>
     </div>
   );
