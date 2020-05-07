@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type FormProps = {
   handleForm: React.FormEventHandler,
   handleInput: Function,
@@ -10,4 +12,10 @@ export type LocationItem = {
   location_type: string,
   title: string,
   woeid: number,
+};
+
+export type LocationProps = {
+  handleClick: Function,
+  id: number,
+  name: string,
 };

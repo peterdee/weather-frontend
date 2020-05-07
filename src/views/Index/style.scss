@@ -34,6 +34,14 @@ button:focus, input:focus {
   outline: none;
 }
 
-.index {
-  color: blue;
+.location {
+  background-color: white;
+  border: none;
+  border-radius: 0%;
+  color: midnightblue;
+  padding: 15px;
+}
+.location:hover {
+  background-color: #dfdfdf;
+  color: midnightblue;
 }

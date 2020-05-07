@@ -2,6 +2,7 @@ import React, { memo, useEffect, useState, FormEvent } from 'react';
 import axios from 'axios';
 
 import Form from './Form';
+import Location from './Location';
 import { LocationItem } from './types';
 import './style.scss';
 
@@ -113,11 +114,13 @@ const Index: React.FC = () => {
       <div className="margin-top">
         { list.map((location: LocationItem) => (
           <div key={location.woeid}>
-            <button onClick={() => getDetails(location.woeid)}>
-              { location.title }
-            </button>
+            <Location
+              handleClick={getDetails}
+              id={location.woeid}
+              name={location.title}
+            />
           </div>
-        ))}
+        )) }
       </div>
     </div>
   );
