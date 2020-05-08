@@ -34,6 +34,11 @@ button:focus, input:focus {
   outline: none;
 }
 
+.error-message {
+  color: red;
+  font-size: 20px;
+  font-weight: 200;
+}
 .location {
   background-color: white;
   border: none;
@@ -42,6 +47,7 @@ button:focus, input:focus {
   padding: 15px;
 }
 .location:hover {
-  background-color: #dfdfdf;
-  color: midnightblue;
+  background-color: midnightblue;
+  color: white;
+  transition: 200ms all;
 }

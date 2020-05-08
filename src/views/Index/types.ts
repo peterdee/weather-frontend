@@ -1,5 +1,9 @@
 import React from 'react';
 
+export type ErrorProps = {
+  message: string,
+};
+
 export type FormProps = {
   handleForm: React.FormEventHandler,
   handleInput: Function,

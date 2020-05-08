@@ -1,6 +1,12 @@
-import React, { memo, useEffect, useState, FormEvent } from 'react';
+import React, {
+  FormEvent,
+  memo,
+  useEffect,
+  useState,
+} from 'react';
 import axios from 'axios';
 
+import Error from './Error';
 import Form from './Form';
 import Location from './Location';
 import { LocationItem } from './types';
@@ -16,6 +22,7 @@ const Index: React.FC = () => {
     isOnline: false,
   });
 
+  const [error, setError] = useState('');
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
@@ -78,11 +85,10 @@ const Index: React.FC = () => {
       });
 
       setLoading(false);
-      console.log(data)
       setList(data);
     } catch(error) {
       setLoading(false);
-      return console.log(error);
+      return setError('Error loading locations!')
     }
   }
 
@@ -111,17 +117,24 @@ const Index: React.FC = () => {
           search={search}
         />
       </div>
-      <div className="margin-top">
-        { list.map((location: LocationItem) => (
-          <div key={location.woeid}>
-            <Location
-              handleClick={getDetails}
-              id={location.woeid}
-              name={location.title}
-            />
-          </div>
-        )) }
-      </div>
+      { error && (
+        <div className="margin-top">
+          <Error message={error} />
+        </div>
+      ) }
+      { !error && (
+        <div className="margin-top">
+          { list.map((location: LocationItem) => (
+            <div key={location.woeid}>
+              <Location
+                handleClick={getDetails}
+                id={location.woeid}
+                name={location.title}
+              />
+            </div>
+          )) }
+        </div>
+      ) }
     </div>
   );
 };
