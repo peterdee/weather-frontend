@@ -5,8 +5,22 @@ import { DetailsProps } from './types';
 import './style.scss';
 
 const Details: React.FunctionComponent<DetailsProps> = (props) => (
-  <div className="details">
-    { props.name }
+  <div className="flex direction-column details">
+    <div className="name">
+      { props.name.toUpperCase() }
+    </div>
+    <div>
+      { props.parent.toUpperCase() }
+    </div>
+    <div className="margin-top">
+      { `Geoposition: ${props.latitude} LAT, ${props.longitude} LON` }
+    </div>
+    <div className="margin-top">
+      { `Sunrise: ${props.sunRise.split('T')[1].split('.')[0]}` }
+    </div>
+    <div className="margin-top">
+      { `Sunset: ${props.sunSet.split('T')[1].split('.')[0]}` }
+    </div>
   </div>
 );
 
