@@ -51,3 +51,16 @@ button:focus, input:focus {
   color: white;
   transition: 200ms all;
 }
+.details {
+  color: #2a2a2a;
+  .name {
+    color: midnightblue;
+    font-size: 20px;
+    font-weight: 200;
+  }
+  .parent {
+    color: #777777;
+    font-size: 14px;
+    font-weight: 200;
+  }
+}
