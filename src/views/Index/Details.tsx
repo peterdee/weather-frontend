@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import { DetailsProps } from './types';
+import { DetailsProps, Source as SourceType } from './types';
+import Source from './Source';
 import './style.scss';
 
 const Details: React.FunctionComponent<DetailsProps> = (props) => (
@@ -21,6 +22,13 @@ const Details: React.FunctionComponent<DetailsProps> = (props) => (
     <div className="margin-top">
       { `Sunset: ${props.sunSet.split('T')[1].split('.')[0]}` }
     </div>
+    { props.sources && props.sources.map((source: SourceType) => (
+      <Source
+        key={source.title}
+        link={source.url}
+        name={source.title}
+      />
+    )) }
   </div>
 );
 
