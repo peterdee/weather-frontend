@@ -31,6 +31,12 @@ export interface Source {
   url: string;
 };
 
+export interface SourceProps {
+  link: string;
+  name: string;
+};
+
+
 export interface Weather {
   air_pressure: number;
   applicable_date: string;
