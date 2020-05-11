@@ -22,13 +22,18 @@ const Details: React.FunctionComponent<DetailsProps> = (props) => (
     <div className="margin-top">
       { `Sunset: ${props.sunSet.split('T')[1].split('.')[0]}` }
     </div>
-    { props.sources && props.sources.map((source: SourceType) => (
-      <Source
-        key={source.title}
-        link={source.url}
-        name={source.title}
-      />
-    )) }
+    <div className="margin-top">
+      Data sources:
+    </div>
+    <div className="flex direction-row justify-content-start sources-list">
+      { props.sources && props.sources.map((source: SourceType) => (
+        <Source
+          key={source.title}
+          link={source.url}
+          name={source.title}
+        />
+      )) }
+    </div>
   </div>
 );
 
