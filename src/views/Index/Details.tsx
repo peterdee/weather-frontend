@@ -1,8 +1,9 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import { DetailsProps, Source as SourceType } from './types';
+import { DetailsProps, Source as SourceType, Weather as WeatherType } from './types';
 import Source from './Source';
+import Weather from './Weather';
 import './style.scss';
 
 const Details: React.FunctionComponent<DetailsProps> = (props) => (
@@ -22,13 +23,27 @@ const Details: React.FunctionComponent<DetailsProps> = (props) => (
     <div className="margin-top">
       { `Sunset: ${props.sunSet.split('T')[1].split('.')[0]}` }
     </div>
-    { props.sources && props.sources.map((source: SourceType) => (
-      <Source
-        key={source.title}
-        link={source.url}
-        name={source.title}
+    <div className="margin-top">
+      Weather:
+    </div>
+    { props.weather && props.weather.map((item: WeatherType) => (
+      <Weather
+        key={item.id}
+        { ...item }
       />
     )) }
+    <div className="margin-top">
+      Data sources:
+    </div>
+    <div className="flex direction-row justify-content-start sources-list">
+      { props.sources && props.sources.map((source: SourceType) => (
+        <Source
+          key={source.title}
+          link={source.url}
+          name={source.title}
+        />
+      )) }
+    </div>
   </div>
 );
 
