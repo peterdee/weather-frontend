@@ -5,11 +5,19 @@ import { Weather as WeatherType } from './types';
 import './style.scss';
 
 const Weather: React.FunctionComponent<WeatherType> = (props) => (
-  <div className="flex direction-column">
+  <div className="flex direction-column weather-item">
+    <div>
+      { `Date: ${props.applicable_date}` }
+    </div>
+    <div>
+      { `Temperature: ${props.the_temp} (max: ${props.max_temp}, min: ${props.min_temp})` }
+    </div>
     <div>
       { `Air pressure: ${props.air_pressure}` }
-      { `Temperature: ${props.the_temp}` }
-    </div>    
+    </div>
+    <div>
+      { `Visibility: ${props.visibility}` }
+    </div>
   </div>
 );
 
