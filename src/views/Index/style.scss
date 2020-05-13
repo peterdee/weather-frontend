@@ -76,4 +76,7 @@ button:focus, input:focus {
 }
 .weather-item {
   margin-top: 7px;
+  .w-date {
+    font-weight: 600;
+  }
 }

@@ -6,17 +6,18 @@ import './style.scss';
 
 const Weather: React.FunctionComponent<WeatherType> = (props) => (
   <div className="flex direction-column weather-item">
-    <div>
+    <div className="w-date">
       { `Date: ${props.applicable_date}` }
     </div>
     <div>
-      { `Temperature: ${props.the_temp} (max: ${props.max_temp}, min: ${props.min_temp})` }
+      { `Temperature: ${props.the_temp.toFixed(1)} (max: ${props.max_temp.toFixed(1)},
+        min: ${props.min_temp.toFixed(1)})` }
     </div>
     <div>
-      { `Air pressure: ${props.air_pressure}` }
+      { `Air pressure: ${props.air_pressure.toFixed(1)}` }
     </div>
     <div>
-      { `Visibility: ${props.visibility}` }
+      { `Visibility: ${props.visibility.toFixed(1)}` }
     </div>
   </div>
 );
