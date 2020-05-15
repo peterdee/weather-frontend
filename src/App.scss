@@ -30,7 +30,7 @@
 }
 
 .app-wrap {
-  min-height: 100vh;
+  min-height: calc(100vh - 25px);
   .content {
     margin: 40px auto;
     max-width: 600px;
