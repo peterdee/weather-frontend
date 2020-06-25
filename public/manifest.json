@@ -1,6 +1,6 @@
 {
-  "short_name": "Frontend",
-  "name": "Frontend for Molecular microservices",
+  "short_name": "Moleculer Demo",
+  "name": "A frontend for Molecular microservices",
   "icons": [
     {
       "src": "favicon.ico",
