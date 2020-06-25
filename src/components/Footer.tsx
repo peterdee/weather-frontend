@@ -4,9 +4,7 @@ import './Footer.scss';
 
 const Footer: React.FC = () => (
   <div className="flex justify-content-center footer">
-    <a href="https://github.com/peterdee">
-      Peter Dyumin, 2020
-    </a>
+    <a href="https://github.com/peterdee">Peter Dyumin</a>, 2020
   </div>
 );
 

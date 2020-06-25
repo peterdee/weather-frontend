@@ -6,7 +6,7 @@
     "name": "Peter Dyumin",
     "url": "https://github.com/peterdee"
   },
-  "description": "Frontend for the Moleculer projects",
+  "description": "A frontend for the Moleculer projects",
   "homepage": "https://github.com/peterdee/weather-frontend",
   "scripts": {
     "start": "react-scripts start",
@@ -14,8 +14,8 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node": "12.16.1",
-    "npm": "6.14.4"
+    "node": "14.3.0",
+    "npm": "6.14.5"
   },
   "repository": {
     "type": "git",
