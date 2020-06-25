@@ -45,7 +45,7 @@ const Index: React.FC = () => {
       });
       axios({
         method: 'GET',
-        url: 'http://localhost:5522/api/ping',
+        url: `${process.env.REACT_APP_DATABASE_MS}/api/ping`,
       }).then(() => setDatabase({
         isLoading: false,
         isOnline: true,
@@ -56,7 +56,7 @@ const Index: React.FC = () => {
       })));
       axios({
         method: 'GET',
-        url: 'http://localhost:5544/api/ping',
+        url: `${process.env.REACT_APP_METAWEATHER_MS}/api/ping`,
       }).then(() => setMetaweather({
         isLoading: false,
         isOnline: true,
@@ -91,7 +91,7 @@ const Index: React.FC = () => {
       setLoading(true);
       const { data: { data = [] } = {} } = await axios({
         method: 'GET',
-        url: `http://localhost:5522/api/data/locations?query=${search}`,
+        url: `${process.env.REACT_APP_DATABASE_MS}/api/data/locations?query=${search}`,
       });
 
       setLoading(false);
@@ -107,7 +107,7 @@ const Index: React.FC = () => {
       setLoading(true);
       const { data: { data = {} } = {} } = await axios({
         method: 'GET',
-        url: `http://localhost:5522/api/data/location?id=${id}`,
+        url: `${process.env.REACT_APP_DATABASE_MS}/api/data/location?id=${id}`,
       })
       setDetails({
         data: { ...data },
