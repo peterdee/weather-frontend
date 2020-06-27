@@ -1,6 +1,7 @@
 import React, {
   FormEvent,
   memo,
+  useEffect,
   useState,
 } from 'react';
 import axios from 'axios';
@@ -10,18 +11,10 @@ import Error from './Error';
 import Form from './Form';
 import Location from './Location';
 import { DetailsState, LocationItem } from './types';
+import useDebounce from '../../custom-hooks/use-debounce';
 import './style.scss';
 
 const Index: React.FC = () => {
-  const [database, setDatabase] = useState({
-    isLoading: false,
-    isOnline: false,
-  });
-  const [metaweather, setMetaweather] = useState({
-    isLoading: false,
-    isOnline: false,
-  });
-
   const detailsState: DetailsState = {
     data: {},
     isLoaded: false,
@@ -31,6 +24,17 @@ const Index: React.FC = () => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
+
+  const debouncedSearch = useDebounce(search, 350);
+
+  useEffect(
+    () => {
+      if (debouncedSearch) {
+        console.log('debounced', debouncedSearch);
+      }
+    },
+    [debouncedSearch],
+  );
 
   /**
    * Handle the search form
@@ -85,19 +89,6 @@ const Index: React.FC = () => {
 
   return (
     <div className="flex direction-column content">
-      <h1 className="noselect">MetaWeather</h1>
-      <div className="margin-top">
-        { `Database microservice: ${!database.isLoading && database.isOnline
-          ? 'online'
-          : 'offline'}`
-        }
-      </div>
-      <div className="margin-top">
-        { `MetaWeather API microservice: ${!metaweather.isLoading && metaweather.isOnline
-          ? 'online'
-          : 'offline'}`
-        }
-      </div>
       <div className="margin-top">
         <Form
           handleForm={handleForm}
@@ -107,7 +98,7 @@ const Index: React.FC = () => {
         />
       </div>
       { error && (
-        <div className="margin-top">
+        <div className="margin-top noselect">
           <Error message={error} />
         </div>
       ) }

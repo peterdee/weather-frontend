@@ -19,7 +19,7 @@ const Form: React.FunctionComponent<FormProps> = ({
       value={search}
     />
     <button
-      className="margin-top"
+      className="margin-top noselect"
       disabled={!isEnabled}
       type="submit"
     >

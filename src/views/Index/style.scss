@@ -1,8 +1,8 @@
 button {
   background-color: white;
-  border: 1px solid midnightblue;
-  border-radius: 15px;
-  color: midnightblue;
+  border: 1px solid var(--blue-primary);
+  border-radius: 16px;
+  color: var(--blue-primary);
   font-size: 16px;
   font-weight: 100;
   padding: 10px;
@@ -10,21 +10,21 @@ button {
   width: 100%;
 }
 button:hover {
-  background-color: midnightblue;
+  background-color: var(--blue-primary);
   color: white;
   cursor: pointer;
   transition: all 200ms ease-in;
 }
 button:disabled {
   background-color: white;
-  border: 1px solid #cfcfcf;
-  color: #cfcfcf;
+  border: 1px solid var(--text-highlight);
+  color: var(--text-highlight);
   cursor: default;
   transition: all 200ms ease-in;
 }
 input {
-  border: 1px solid #bababa;
-  border-radius: 15px;
+  border: 1px solid var(--text-primary);
+  border-radius: 16px;
   font-size: 20px;
   font-weight: 200;
   padding: 15px;
@@ -35,7 +35,7 @@ button:focus, input:focus {
 }
 
 .error-message {
-  color: red;
+  color: var(--red-primary);
   font-size: 20px;
   font-weight: 200;
 }
@@ -43,18 +43,18 @@ button:focus, input:focus {
   background-color: white;
   border: none;
   border-radius: 0%;
-  color: midnightblue;
+  color: var(--text-primary);
   padding: 15px;
 }
 .location:hover {
-  background-color: midnightblue;
+  background-color: var(--blue-primary);
   color: white;
   transition: 200ms all;
 }
 .details {
-  color: #2a2a2a;
+  color: var(--text-primary);
   .name {
-    color: midnightblue;
+    color: var(--blue-primary);
     font-size: 20px;
     font-weight: 200;
   }
