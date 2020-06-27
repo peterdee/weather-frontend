@@ -25,13 +25,16 @@ time, mark, audio, video {
 *, *:before, *:after {
   box-sizing: border-box;
 }
-
 a, a:visited {
   color: midnightblue;
 }
-
 h1 {
   font-size: 32px;
   font-weight: 200;
   color: midnightblue;
+}
+
+/* Global CSS variables */
+:root {
+  --blue-primary:#289bdd;
 }

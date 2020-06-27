@@ -1,24 +1,24 @@
-.header {
-  font-size: 20px;
-  .logo {
-    height: 64px;
-    width: 64px;
-  }
-  .navigate {
-    border: none;
-    border-bottom: 2px solid white;
-    border-radius: 0;
-    color: #289bdd;
-    font-size: 24px;
-    font-weight: 200;
-    padding: 0;
-    transition: border-bottom 250ms ease-in-out;
-    width: auto;
-  }
-  .navigate:hover {
-    background-color: white;
-    border-bottom: 2px solid #289bdd;
-    color: #289bdd;
-    transition: border-bottom 250ms ease-in-out;
-  }
+.logo {
+  height: 64px;
+  width: 64px;
+}
+.navigate {
+  border: none;
+  border-bottom: 2px solid white;
+  border-radius: 0;
+  color: var(--blue-primary);
+  font-size: 14px;
+  font-weight: 200;
+  padding: 0;
+  transition: border-bottom 250ms ease-in-out;
+  width: auto;
+}
+.navigate:hover {
+  background-color: white;
+  border-bottom: 2px solid var(--blue-primary);
+  color: var(--blue-primary);
+  transition: border-bottom 250ms ease-in-out;
+}
+.active {
+  border-bottom: 2px solid var(--blue-primary);
 }

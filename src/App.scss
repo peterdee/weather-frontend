@@ -16,17 +16,26 @@
 .justify-content-center {
   justify-content: center;
 }
+.justify-content-space-between {
+  justify-content: space-between;
+}
 .justify-content-start {
   justify-content: flex-start;
 }
+.margin-left {
+  margin-left: 16px;
+}
 .margin-top {
-  margin-top: 15px;
+  margin-top: 16px;
 }
 .text-center {
   text-align: center;
 }
 .text-left {
   text-align: left;
+}
+.width100 {
+  width: 100%;
 }
 
 .app-wrap {
