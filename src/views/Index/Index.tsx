@@ -1,7 +1,6 @@
 import React, {
   FormEvent,
   memo,
-  useEffect,
   useState,
 } from 'react';
 import axios from 'axios';
@@ -32,42 +31,6 @@ const Index: React.FC = () => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
-
-  useEffect(
-    () => {
-      setDatabase({
-        isLoading: true,
-        isOnline: false,
-      });
-      setMetaweather({
-        isLoading: true,
-        isOnline: false,
-      });
-      axios({
-        method: 'GET',
-        url: `${process.env.REACT_APP_DATABASE_MS}/api/ping`,
-      }).then(() => setDatabase({
-        isLoading: false,
-        isOnline: true,
-      }))
-      .catch(() => setDatabase((state) => ({
-        ...state,
-        isLoading: false,
-      })));
-      axios({
-        method: 'GET',
-        url: `${process.env.REACT_APP_METAWEATHER_MS}/api/ping`,
-      }).then(() => setMetaweather({
-        isLoading: false,
-        isOnline: true,
-      }))
-      .catch(() => setMetaweather((state) => ({
-        ...state,
-        isLoading: false,
-      })));
-    },
-    [],
-  );
 
   /**
    * Handle the search form

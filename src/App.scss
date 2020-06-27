@@ -1,3 +1,16 @@
+a, a:visited {
+  color: var(--blue-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1 {
+  color: var(--blue-primary);
+  font-size: 32px;
+  font-weight: 200;
+}
+
 .flex {
   display: flex;
 }
@@ -34,12 +47,15 @@
 .text-left {
   text-align: left;
 }
+.pointer {
+  cursor: pointer;
+}
 .width100 {
   width: 100%;
 }
 
 .app-wrap {
-  min-height: calc(100vh - 25px);
+  min-height: calc(100vh - 32px);
   .content {
     margin: 16px auto;
     max-width: 600px;

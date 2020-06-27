@@ -12,13 +12,15 @@ const Header: React.FC = () => {
   const { pathname = '/' } = useLocation();
 
   return (
-    <div className="flex justify-content-start align-items-center content">
+    <div className="flex justify-content-start align-items-center content noselect">
       <a href="/">
-        <img
-          alt="Logo"
-          className="logo"
-          src={logo}
-        />
+        <div className="logo">
+          <img
+            alt="Logo"
+            className="logo"
+            src={logo}
+          />
+        </div>
       </a>
       <button
         className={`navigate margin-left ${pathname === '/' && 'active'}`}
