@@ -1,5 +1,30 @@
 .footer {
   font-size: 12px;
-  font-weight: 100;
-  height: 25px;
+  font-weight: 300;
+  height: 32px;
+  .status {
+    border-radius: 50%;
+    height: 10px;
+    margin: 2px 4px 0 4px;
+    transition: background-color 250ms ease-in-out;
+    width: 10px;
+  }
+  .loading {
+    background-color: var(--text-primary);
+  }
+  .loading:hover {
+    background-color: var(--text-highlight);
+  }
+  .offline {
+    background-color: var(--red-primary);
+  }
+  .offline:hover {
+    background-color: var(--red-highlight);
+  }
+  .online {
+    background-color: var(--blue-primary);
+  }
+  .online:hover {
+    background-color: var(--blue-highlight);
+  }
 }

@@ -26,12 +26,15 @@ time, mark, audio, video {
   box-sizing: border-box;
 }
 
-a, a:visited {
-  color: midnightblue;
+/* Global CSS variables */
+:root {
+  --blue-primary: #289bdd;
+  --blue-highlight: #71cbff;
+  --red-primary: #dd2b28;
+  --red-highlight: #ff7573;
+  --text-primary: #393939;
+  --text-highlight: #898989;
 }
-
-h1 {
-  font-size: 32px;
-  font-weight: 200;
-  color: midnightblue;
+* {
+  color: var(--text-primary);
 }
