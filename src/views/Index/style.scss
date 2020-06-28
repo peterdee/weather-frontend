@@ -79,3 +79,11 @@ button:focus, input:focus {
   margin-top: 5px;
   padding-top: 5px;
 }
+.suggestions {
+  background-color: white;
+  border: 1px solid var(--text-primary);
+  border-radius: 16px;
+  padding: 16px;
+  position: fixed;
+  width: 340px;
+}
