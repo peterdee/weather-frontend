@@ -58,15 +58,24 @@ const Footer: React.FC = () => {
 
   return (
     <div className="flex justify-content-center align-items-center footer noselect">
-      <a
-        href="https://github.com/peterdee"
-      >Peter Dyumin</a>, { new Date().getFullYear() } | Database status: <div
-        className={`status pointer ${database.class}`}
-        title={database.title}
-      /> | Weather status: <div
-        className={`status pointer ${metaweather.class}`}
-        title={metaweather.title}
-      />
+      <div className="flex align-items-center">
+        <a
+          href="https://github.com/peterdee"
+        >Peter Dyumin</a>, { new Date().getFullYear() }
+      </div>
+      <div className="flex align-items-center margins">
+        Database status:
+        <div
+          className={`status pointer ${database.class}`}
+          title={database.title}
+        />
+      </div>
+      <div className="flex align-items-center">
+        Weather status: <div
+          className={`status pointer ${metaweather.class}`}
+          title={metaweather.title}
+        />
+      </div>
     </div>
   );
 };

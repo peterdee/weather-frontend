@@ -4,17 +4,11 @@ export interface ErrorProps {
   message: string;
 };
 
-export interface SuggestionItem {
-  id: number|string;
-  name: string;
-}
-
 export interface FormProps {
   handleForm: React.FormEventHandler;
   handleInput: Function;
   isEnabled: boolean;
   search: string;
-  suggestions: SuggestionItem[];
 };
 
 export interface LocationItem {
