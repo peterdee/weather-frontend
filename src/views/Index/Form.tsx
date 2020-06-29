@@ -9,7 +9,6 @@ const Form: React.FunctionComponent<FormProps> = ({
   handleInput,
   isEnabled,
   search,
-  suggestions,
 }) => (
   <form onSubmit={handleForm}>
     <div className="width100">
@@ -20,15 +19,6 @@ const Form: React.FunctionComponent<FormProps> = ({
         type="text"
         value={search}
       />
-      { search && search.length > 1 && (
-        <div className="suggestions">
-          { suggestions.map((item) => (
-            <div>
-              { item.name }
-            </div>
-          )) }
-        </div>
-      ) }
     </div>
     <button
       className="margin-top noselect"
@@ -45,10 +35,6 @@ Form.propTypes = {
   handleInput: PropTypes.func.isRequired,
   isEnabled: PropTypes.bool.isRequired,
   search: PropTypes.string.isRequired,
-  suggestions: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-  })).isRequired,
 };
 
 export default memo(Form);
