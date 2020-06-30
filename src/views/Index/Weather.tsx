@@ -4,26 +4,46 @@ import PropTypes from 'prop-types';
 import { Weather as WeatherType } from './types';
 import './style.scss';
 
-const Weather: React.FunctionComponent<WeatherType> = (props) => (
-  <div className="flex direction-column weather-item">
-    <div>
-      { `Date: ${props.applicable_date}` }
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
+const Weather: React.FunctionComponent<WeatherType> = (props) => {
+  const [year, month, date] = props.applicable_date.split('-');
+  const formattedDate = `${months[Number(month) - 1]} ${date}, ${year}`;
+
+  return (
+    <div className="flex direction-column weather-item">
+      <div>
+        { `Date: ${formattedDate}` }
+      </div>
+      <div>
+        { `Temperature: ${props.the_temp.toFixed(1)} (max: ${props.max_temp.toFixed(1)},
+          min: ${props.min_temp.toFixed(1)})` }
+      </div>
+      <div>
+        { `Air pressure: ${props.air_pressure.toFixed(1)}` }
+      </div>
+      <div>
+        { `Air humidity: ${props.humidity.toFixed(1)}` }
+      </div>
+      <div>
+        { `Visibility: ${props.visibility.toFixed(1)}` }
+      </div>
     </div>
-    <div>
-      { `Temperature: ${props.the_temp.toFixed(1)} (max: ${props.max_temp.toFixed(1)},
-        min: ${props.min_temp.toFixed(1)})` }
-    </div>
-    <div>
-      { `Air pressure: ${props.air_pressure.toFixed(1)}` }
-    </div>
-    <div>
-      { `Air humidity: ${props.humidity.toFixed(1)}` }
-    </div>
-    <div>
-      { `Visibility: ${props.visibility.toFixed(1)}` }
-    </div>
-  </div>
-);
+  );
+};
 
 Weather.propTypes = {
   air_pressure: PropTypes.number.isRequired,
