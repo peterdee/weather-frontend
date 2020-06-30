@@ -62,7 +62,7 @@ const Index: React.FC = () => {
       const { data: { data = {} } = {} } = await axios({
         method: 'GET',
         url: `${process.env.REACT_APP_DATABASE_MS}/api/data/location?id=${id}`,
-      })
+      });
       setDetails({
         data: { ...data },
         isLoaded: true,
