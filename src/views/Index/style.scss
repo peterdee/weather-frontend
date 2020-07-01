@@ -79,6 +79,9 @@ button:focus, input:focus {
   margin-top: 5px;
   padding-top: 5px;
 }
+.weather-title {
+  font-weight: 600;
+}
 .suggestions {
   background-color: white;
   border: 1px solid var(--text-primary);
