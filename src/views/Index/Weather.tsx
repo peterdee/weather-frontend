@@ -4,6 +4,16 @@ import PropTypes from 'prop-types';
 import { Weather as WeatherType } from './types';
 import './style.scss';
 
+const days = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+
 const months = [
   'January',
   'February',
@@ -21,12 +31,17 @@ const months = [
 
 const Weather: React.FunctionComponent<WeatherType> = (props) => {
   const [year, month, date] = props.applicable_date.split('-');
-  const formattedDate = `${months[Number(month) - 1]} ${date}, ${year}`;
+  const formattedDate = `${days[new Date(
+    Number(year),
+    Number(month) - 1,
+    Number(date),
+  ).getDay()]}, ${months[Number(month) - 1]} ${date}, ${year}`;
+
 
   return (
     <div className="flex direction-column weather-item">
-      <div>
-        { `Date: ${formattedDate}` }
+      <div className="weather-title">
+        { formattedDate }
       </div>
       <div>
         { `Temperature: ${props.the_temp.toFixed(1)} (max: ${props.max_temp.toFixed(1)},
@@ -36,10 +51,10 @@ const Weather: React.FunctionComponent<WeatherType> = (props) => {
         { `Air pressure: ${props.air_pressure.toFixed(1)}` }
       </div>
       <div>
-        { `Air humidity: ${props.humidity.toFixed(1)}` }
+        { `Air humidity: ${props.humidity.toFixed(1)}%` }
       </div>
       <div>
-        { `Visibility: ${props.visibility.toFixed(1)}` }
+        { `Visibility: ${props.visibility.toFixed(1)} kilometers` }
       </div>
     </div>
   );

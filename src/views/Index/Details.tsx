@@ -23,8 +23,8 @@ const Details: React.FunctionComponent<DetailsProps> = (props) => (
     <div className="margin-top">
       { `Sunset: ${props.sunSet.split('T')[1].split('.')[0]}` }
     </div>
-    <div className="margin-top">
-      Weather:
+    <div className="margin-top weather-title">
+      Forecast:
     </div>
     { props.weather && props.weather.map((item: WeatherType) => (
       <Weather
