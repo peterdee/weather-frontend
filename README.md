@@ -8,7 +8,7 @@ Database microservice: https://github.com/peterdee/moleculer-database
 
 DEV: http://localhost:3000
 
-Use [`yarn`](https://yarnpkg.com) for module installation.
+STAGE: 
 
 ### Deploy
 
@@ -36,3 +36,7 @@ yarn start
 ```shell script
 yarn build
 ```
+
+### Heroku
+
+In progress.
