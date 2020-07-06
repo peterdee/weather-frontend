@@ -44,8 +44,8 @@ const Weather: React.FunctionComponent<WeatherType> = (props) => {
         { formattedDate }
       </div>
       <div>
-        { `Temperature: ${props.the_temp.toFixed(1)} (max: ${props.max_temp.toFixed(1)},
-          min: ${props.min_temp.toFixed(1)})` }
+        { `Temperature: ${props.the_temp.toFixed(1)}°C (max: ${props.max_temp.toFixed(1)}°C,
+          min: ${props.min_temp.toFixed(1)}°C)` }
       </div>
       <div>
         { `Air pressure: ${props.air_pressure.toFixed(1)}` }
@@ -54,7 +54,7 @@ const Weather: React.FunctionComponent<WeatherType> = (props) => {
         { `Air humidity: ${props.humidity.toFixed(1)}%` }
       </div>
       <div>
-        { `Visibility: ${props.visibility.toFixed(1)} kilometers` }
+        { `Visibility: ${props.visibility.toFixed(1)} km` }
       </div>
     </div>
   );
