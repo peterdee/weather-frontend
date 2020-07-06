@@ -8,7 +8,7 @@ Database microservice: https://github.com/peterdee/moleculer-database
 
 DEV: http://localhost:3000
 
-STAGE: 
+STAGE: https://weather-frontend-react.herokuapp.com
 
 ### Deploy
 
