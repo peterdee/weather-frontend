@@ -28,13 +28,19 @@ See the [`.env.example`](.env.example) for details.
 ### Launch
 
 ```shell script
-yarn start
+yarn dev
 ```
 
 ### Build
 
 ```shell script
 yarn build
+```
+
+### Serve static
+
+```shell script
+yarn build && yarn start
 ```
 
 ### Heroku
