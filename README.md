@@ -39,4 +39,4 @@ yarn build
 
 ### Heroku
 
-In progress.
+The `stage` branch is deployed to Heroku automatically.
