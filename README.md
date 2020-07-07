@@ -1,5 +1,7 @@
 ## weather-frontend
 
+[![Build Status](https://travis-ci.com/peterdee/weather-frontend.svg?branch=stage)](https://travis-ci.com/peterdee/weather-frontend)
+
 A frontend for the Moleculer projects!
 
 MetaWeather microservice: https://github.com/peterdee/moleculer-metaweather
