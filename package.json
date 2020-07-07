@@ -7,7 +7,7 @@
     "url": "https://github.com/peterdee"
   },
   "description": "A frontend for the Moleculer projects",
-  "homepage": "https://github.com/peterdee/weather-frontend",
+  "homepage": "https://weather-frontend-react.herokuapp.com",
   "scripts": {
     "build": "react-scripts build",
     "dev": "react-scripts start",
